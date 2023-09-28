@@ -429,7 +429,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 6826443478546178083, guid: d326c12ab3384c04ab87e76bc066dee1, type: 3}
   towerPosition: {fileID: 860073095058209005, guid: d92e8d8934552ef4c821b786d4b3dc9c, type: 3}
   waitTime: 5
-  maxNumberOfTowers: 5
+  towerPositions: 5
 --- !u!1 &413100667
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +560,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &851927975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851927977}
+  - component: {fileID: 851927976}
+  m_Layer: 0
+  m_Name: MoneyMaker3000Script
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &851927976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851927975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d524177110e62b4d8ac969268c3a0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bankTotal: 100
+  enemyGold: 5
+  roundGold: 25
+--- !u!4 &851927977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851927975}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24180311, y: -1.0666356, z: 0.28825226}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -568,3 +615,4 @@ SceneRoots:
   - {fileID: 413100670}
   - {fileID: 44556439}
   - {fileID: 254122022}
+  - {fileID: 851927977}
