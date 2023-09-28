@@ -31,6 +31,5 @@ public class BulletController : MonoBehaviour
     {
         Vector2 force = new Vector2(targetPosition.x - startPosition.x, targetPosition.y - startPosition.y);
         bulletBody.AddForce(force.normalized*speed);
-        Debug.Log($"force: {force}, start: {startPosition}, target: {targetPosition}");
     }
 }
