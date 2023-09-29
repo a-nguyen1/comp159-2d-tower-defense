@@ -49,4 +49,22 @@ public class DomeManager : MonoBehaviour
     {
         
     }
+
+    //USE THESE TO DO THINGS WITH THE DOME(tm)
+
+    public void TakeDamage(float damage){
+        domeHP -= damage;
+        CheckStatus();
+    }
+
+    public void RepairDome(){
+        domeHP = domeMaxHP;
+    }
+
+    private void CheckStatus(){
+        if(domeHP <= 0){
+            StateManager.Instance.UpdateState(GameState.Game_Over);
+        }
+    }
+
 }
