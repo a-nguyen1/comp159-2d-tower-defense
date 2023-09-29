@@ -12,13 +12,16 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject towerPosition;
     [SerializeField] private int waitTime = 5; //wait time for when another enemy will spawn
     [SerializeField] private int towerPositions = 5;
-    [SerializeField] private TextMeshProUGUI coinsLabel;
+    [SerializeField] private TextMeshProUGUI bankLabel;
+    private GameObject bankObject;
 
     // Start is called before the first frame update
     void Start()
     {
         SetUpTowerPositions();
         StartCoroutine("SpawnEnemies");
+        bankObject = GameObject.FindGameObjectWithTag("Money");
+
     }
 
     // Update is called once per frame
@@ -50,6 +53,11 @@ public class GameController : MonoBehaviour
     {//Spawns two enemies on different sides of platform
         Instantiate(enemyPrefab, enemyLeftPosition, Quaternion.identity);
         Instantiate(enemyPrefab, enemyRightPosition, Quaternion.identity);
+    }
+    
+    public void BankChange()
+    {
+        bankLabel.SetText("bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
     }
     
 }

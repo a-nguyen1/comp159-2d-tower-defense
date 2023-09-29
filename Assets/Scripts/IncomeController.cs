@@ -18,6 +18,12 @@ public class IncomeController : MonoBehaviour
     {
         bankTotal += roundGold;
     }
+
+    public int BankTotalReturn()
+    {
+        return bankTotal;
+    }
+    
     void Start()
     {
         
