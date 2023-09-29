@@ -51,4 +51,5 @@ public class GameController : MonoBehaviour
         Instantiate(enemyPrefab, enemyLeftPosition, Quaternion.identity);
         Instantiate(enemyPrefab, enemyRightPosition, Quaternion.identity);
     }
+    
 }
