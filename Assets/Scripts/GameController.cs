@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
         SetUpTowerPositions();
         StartCoroutine("SpawnEnemies");
         bankObject = GameObject.FindGameObjectWithTag("Money");
+        bankLabel.SetText("bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
 
     }
 
