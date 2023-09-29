@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -11,6 +12,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject towerPosition;
     [SerializeField] private int waitTime = 5; //wait time for when another enemy will spawn
     [SerializeField] private int towerPositions = 5;
+    [SerializeField] private TextMeshProUGUI coinsLabel;
+
     // Start is called before the first frame update
     void Start()
     {
