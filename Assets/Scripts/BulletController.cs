@@ -11,6 +11,7 @@ public class BulletController : MonoBehaviour
     private Vector2 targetPosition;
     private float speed;
     private int lifetime;
+    private GameObject bankObject;
     
     public void Initialize(Vector2 bulletTarget, float bulletSpeed, int bulletLifetime)
     {
@@ -22,6 +23,7 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        bankObject = GameObject.FindGameObjectWithTag("Money");
         bulletBody = bullet.GetComponent<Rigidbody2D>();
         var localPosition = bullet.GetComponent<Transform>().localPosition;
         startPosition = new Vector2(localPosition.x, localPosition.y);
@@ -38,6 +40,7 @@ public class BulletController : MonoBehaviour
     {
         Destroy(other.gameObject);
         Destroy(this.gameObject);
+        bankObject.GetComponent<IncomeController>().EnemyDown();
     }
 
 }
