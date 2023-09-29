@@ -6,8 +6,8 @@ public class IncomeController : MonoBehaviour
 {
     [SerializeField] private int bankTotal = 100;
     [SerializeField] private int enemyGold = 5;
-
     [SerializeField] private int roundGold = 25;
+    private GameObject gameController;
     // Start is called before the first frame update
     public void EnemyDown()
     {
@@ -26,7 +26,7 @@ public class IncomeController : MonoBehaviour
     
     void Start()
     {
-        
+        gameController = GameObject.FindGameObjectWithTag("GameController");
     }
 
     // Update is called once per frame
