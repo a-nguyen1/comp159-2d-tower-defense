@@ -12,11 +12,13 @@ public class IncomeController : MonoBehaviour
     public void EnemyDown()
     {
         bankTotal += enemyGold;
+        gameController.GetComponent<GameController>().BankChange();
     }
 
     public void RoundEndGold()
     {
         bankTotal += roundGold;
+        gameController.GetComponent<GameController>().BankChange();
     }
 
     public int BankTotalReturn()
