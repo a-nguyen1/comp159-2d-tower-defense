@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1451704389364918474}
   - component: {fileID: 9062287452462681562}
   - component: {fileID: 4032330650044397456}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TowerPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 976147193584349991, guid: 3d40c761aed83c049a413e8cece0608a, type: 3}
-  towerLocation: {fileID: 860073095058209005}
 --- !u!58 &4032330650044397456
 CircleCollider2D:
   m_ObjectHideFlags: 0

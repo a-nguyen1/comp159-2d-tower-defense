@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
@@ -32,4 +33,11 @@ public class BulletController : MonoBehaviour
         Vector2 force = new Vector2(targetPosition.x - startPosition.x, targetPosition.y - startPosition.y);
         bulletBody.AddForce(force.normalized*speed);
     }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(other.gameObject);
+        Destroy(this.gameObject);
+    }
+
 }
