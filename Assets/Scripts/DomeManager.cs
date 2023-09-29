@@ -67,4 +67,8 @@ public class DomeManager : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Entered");
+    }
 }

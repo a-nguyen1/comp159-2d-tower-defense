@@ -33,6 +33,6 @@ public class IncomeController : MonoBehaviour
     void FixedUpdate()
     {
         //Use this to check that when calling above functions, banktotal is properly updating
-        Debug.Log( bankTotal);
+        //Debug.Log( bankTotal);
     }
 }
