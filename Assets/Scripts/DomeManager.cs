@@ -7,6 +7,7 @@ public class DomeManager : MonoBehaviour
     // Start is called before the first frame update
     public float domeHP = 100;
     public float domeMaxHP = 100;
+    private SpriteRenderer domeSprite;
 
     void Awake(){
         StateManager.OnGameStateChanged += StateChangeListener;
@@ -16,9 +17,18 @@ public class DomeManager : MonoBehaviour
         StateManager.OnGameStateChanged -= StateChangeListener;
     }
 
+     void OnTriggerEnter2D(Collider2D other){
+        Debug.Log("Dome hit");
+        if(other.gameObject.tag == "Enemy"){
+            Debug.Log("Enemy hit");
+            TakeDamage(10);
+            Destroy(other.gameObject);
+        }
+    }
+
     void Start()
     {
-        
+        domeSprite = GetComponent<SpriteRenderer>();
     }
     // throw a bunch of switch statements in here, this is whe
     private void StateChangeListener(GameState obj){
@@ -62,13 +72,11 @@ public class DomeManager : MonoBehaviour
     }
 
     private void CheckStatus(){
-        if(domeHP <= 0){
+        
+        if(domeHP <= 0 && StateManager.Instance.State != GameState.Game_Over){
             StateManager.Instance.UpdateState(GameState.Game_Over);
+            domeSprite.color = new Color(255,0,0);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Entered");
-    }
 }
