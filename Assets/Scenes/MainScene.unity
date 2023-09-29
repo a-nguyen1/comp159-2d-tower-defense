@@ -430,7 +430,7 @@ MonoBehaviour:
   towerPosition: {fileID: 860073095058209005, guid: d92e8d8934552ef4c821b786d4b3dc9c, type: 3}
   waitTime: 5
   towerPositions: 5
-  bankLabel: {fileID: 0}
+  bankLabel: {fileID: 1059220242}
 --- !u!1 &413100667
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 851927976}
   m_Layer: 0
   m_Name: MoneyMaker3000Script
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
