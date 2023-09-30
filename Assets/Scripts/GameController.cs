@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private Vector2 enemyLeftPosition = new Vector2(-11, -3);
-    [SerializeField] private Vector2 enemyRightPosition = new Vector2(11, -3);
+    [SerializeField] private Vector2 enemyXPositions = new Vector2(-11, 11);
+    [SerializeField] private Vector2 enemyYPositionRange = new Vector2(-4f, 4f);
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject towerPosition;
     [SerializeField] private int waitTime = 5; //wait time for when another enemy will spawn
@@ -21,7 +22,7 @@ public class GameController : MonoBehaviour
         SetUpTowerPositions();
         StartCoroutine("SpawnEnemies");
         bankObject = GameObject.FindGameObjectWithTag("Money");
-        bankLabel.SetText("bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
+        bankLabel.SetText("Bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
 
     }
 
@@ -35,9 +36,10 @@ public class GameController : MonoBehaviour
     {
         for (int i = 1; i <= towerPositions; i++)
         {
-            float offset = 5;
-            var position = new Vector3(offset*(float)Math.Cos((float)i * Math.PI / (towerPositions + 1)),
-                offset*(float)Math.Sin((float)i * Math.PI / (towerPositions + 1))-offset, -1);
+            float circularOffset = 6;
+            float yOffset = 5;
+            var position = new Vector3(circularOffset*(float)Math.Cos((float)i * Math.PI / (towerPositions + 1)),
+                circularOffset*(float)Math.Sin((float)i * Math.PI / (towerPositions + 1))-yOffset, -1);
             Instantiate(towerPosition, position, Quaternion.identity);
         }
     }
@@ -52,13 +54,16 @@ public class GameController : MonoBehaviour
     }
     private void SpawnEnemy()
     {//Spawns two enemies on different sides of platform
-        Instantiate(enemyPrefab, enemyLeftPosition, Quaternion.identity);
-        Instantiate(enemyPrefab, enemyRightPosition, Quaternion.identity);
+        Vector3 spawnPosition = new Vector3(enemyXPositions.x, Random.Range(enemyYPositionRange.x, enemyYPositionRange.y), 0);
+        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        spawnPosition.x = enemyXPositions.y;
+        spawnPosition.y = Random.Range(enemyYPositionRange.x, enemyYPositionRange.y);
+        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
     }
     
     public void BankChange()
     {
-        bankLabel.SetText("bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
+        bankLabel.SetText("Bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
     }
     
 }
