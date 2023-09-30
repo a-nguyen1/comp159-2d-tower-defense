@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
     private bool targetBase = true;
     
     // Start is called before the first frame update
-    void Start()git 
+    void Start()
     {
         enemyBody = enemy.GetComponent<Rigidbody2D>(); //Grabs rigidbody from enemy to move it
         player = GameObject.FindGameObjectWithTag("Player");
