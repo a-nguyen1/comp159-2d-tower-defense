@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +40,22 @@ public class TowerController : MonoBehaviour
         }
     }
     
+    private void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.tag == "Enemy"){
+            // TODO lower tower health here
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // have enemies retarget when tower is destroyed
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<EnemyController>().TargetNextTower();
+        }
+    }
+
     private void FireBullet(Vector2 bulletTarget)
     {
         GameObject newBullet = Instantiate(bullet, towerLocation, Quaternion.identity);
