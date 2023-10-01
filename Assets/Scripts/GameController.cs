@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int towerPositions = 5;
     [SerializeField] private TextMeshProUGUI bankLabel;
     private GameObject bankObject;
+    private GameObject[] BuyButton;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class GameController : MonoBehaviour
         StartCoroutine("SpawnEnemies");
         bankObject = GameObject.FindGameObjectWithTag("Money");
         bankLabel.SetText("Bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
+        BuyButtonSetUp();
 
     }
 
@@ -60,7 +62,20 @@ public class GameController : MonoBehaviour
         spawnPosition.y = Random.Range(enemyYPositionRange.x, enemyYPositionRange.y);
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
     }
-    
+    private void BuyButtonSetUp()
+    {
+        float xValue=1200;
+        float yValue = 65;
+        BuyButton = GameObject.FindGameObjectsWithTag("BuyButton");
+        for (int i = 0; i < towerPositions; i++)
+        {
+           
+            var position = new Vector3(xValue,yValue, -10);
+            BuyButton[i].transform.position = position;
+            yValue += 122;
+
+        }
+    }
     public void BankChange()
     {
         bankLabel.SetText("Bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());

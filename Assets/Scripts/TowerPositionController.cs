@@ -10,10 +10,13 @@ public class TowerPositionController : MonoBehaviour
     [SerializeField] private GameObject tower;
     private bool towerExists;
     private GameObject currentTower;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         towerExists = false;
+       
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class TowerPositionController : MonoBehaviour
         if (!towerExists) // TODO check if player has enough currency to buy/upgrade tower
         {
             // TODO add UI to buy tower
-            currentTower = Instantiate(tower, transform.position, Quaternion.identity);
+            currentTower = Instantiate(tower, transform.localPosition, Quaternion.identity);
             towerExists = true;
         }
         else
@@ -36,4 +39,6 @@ public class TowerPositionController : MonoBehaviour
             // TODO add UI for upgrading or selling tower
         }
     }
+
+    
 }
