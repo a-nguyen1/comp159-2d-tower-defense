@@ -10,8 +10,9 @@ public class TowerController : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private float fireRatePerSecond;
     [SerializeField] private float bulletSpeed;
-    [SerializeField] private int bulletLifetime;
-
+    [SerializeField] private float bulletLifetime;
+    [SerializeField] private TowerType type = TowerType.Basic;
+    
     private Vector2 towerLocation;
     private GameObject nearestEnemy;
     // Start is called before the first frame update
@@ -59,7 +60,7 @@ public class TowerController : MonoBehaviour
     private void FireBullet(Vector2 bulletTarget)
     {
         GameObject newBullet = Instantiate(bullet, towerLocation, Quaternion.identity);
-        newBullet.GetComponent<BulletController>().Initialize(bulletTarget, bulletSpeed, bulletLifetime);
+        newBullet.GetComponent<BulletController>().Initialize(type, bulletTarget, bulletSpeed, bulletLifetime);
     }
 
     private Vector2 NearestEnemy(GameObject[] enemies)
@@ -80,5 +81,17 @@ public class TowerController : MonoBehaviour
             }
         }
         return nearestEnemyPosition;
+    }
+
+    public void SetTowerType(TowerType newType)
+    {
+        type = newType;
+    }
+
+    public enum TowerType
+    {
+        Basic,
+        Bomb,
+        Slow,
     }
 }

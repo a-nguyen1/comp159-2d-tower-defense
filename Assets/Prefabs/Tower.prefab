@@ -103,6 +103,7 @@ MonoBehaviour:
   fireRatePerSecond: 1
   bulletSpeed: 3
   bulletLifetime: 3
+  type: 1
 --- !u!58 &-8065421632642052027
 CircleCollider2D:
   m_ObjectHideFlags: 0
