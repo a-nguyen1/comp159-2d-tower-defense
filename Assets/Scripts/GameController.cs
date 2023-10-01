@@ -64,15 +64,16 @@ public class GameController : MonoBehaviour
     }
     private void BuyButtonSetUp()
     {
-        float xValue=1200;
-        float yValue = 65;
+        float screenWidth= Screen.width;
+        float screenHeight = Screen.height;
         BuyButton = GameObject.FindGameObjectsWithTag("BuyButton");
         for (int i = 0; i < towerPositions; i++)
         {
-           
+            float xValue = screenWidth * 0.94f; // 6% from the right
+            float yValue = screenHeight * (0.10f + (i * 0.2f)); // Increment by 20% height
             var position = new Vector3(xValue,yValue, -10);
             BuyButton[i].transform.position = position;
-            yValue += 122;
+            
 
         }
     }

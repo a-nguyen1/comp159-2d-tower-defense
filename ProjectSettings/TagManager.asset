@@ -8,6 +8,8 @@ TagManager:
   - Money
   - Tower
   - TowerPosition
+  - BuyButton
+  - UpgradeButton
   layers:
   - Default
   - TransparentFX
