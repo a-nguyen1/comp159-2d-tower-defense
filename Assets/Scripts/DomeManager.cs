@@ -8,6 +8,7 @@ public class DomeManager : MonoBehaviour
     public float domeHP = 100;
     public float domeMaxHP = 100;
     private SpriteRenderer domeSprite;
+    private GameObject game;
 
     void Awake(){
         StateManager.OnGameStateChanged += StateChangeListener;
@@ -29,6 +30,7 @@ public class DomeManager : MonoBehaviour
     void Start()
     {
         domeSprite = GetComponent<SpriteRenderer>();
+        game = GameObject.FindGameObjectWithTag("GameController");
     }
     // throw a bunch of switch statements in here, this is whe
     private void StateChangeListener(GameState obj){
@@ -76,6 +78,7 @@ public class DomeManager : MonoBehaviour
         if(domeHP <= 0 && StateManager.Instance.State != GameState.Game_Over){
             StateManager.Instance.UpdateState(GameState.Game_Over);
             domeSprite.color = new Color(255,0,0);
+            game.GetComponent<GameController>().GameOver();
         }
     }
 

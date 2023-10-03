@@ -14,8 +14,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private int waitTime = 5; //wait time for when another enemy will spawn
     [SerializeField] private int towerPositions = 5;
     [SerializeField] private TextMeshProUGUI bankLabel;
+    [SerializeField] private GameObject gameOverText;
     private GameObject bankObject;
     private GameObject[] BuyButton;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -81,5 +83,10 @@ public class GameController : MonoBehaviour
     {
         bankLabel.SetText("Bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
     }
-    
+
+    public void GameOver()
+    {
+        gameOverText.SetActive(true);
+        Debug.Log("GameOver Active");
+    }
 }
