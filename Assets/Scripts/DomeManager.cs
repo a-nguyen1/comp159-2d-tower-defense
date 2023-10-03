@@ -62,7 +62,7 @@ public class DomeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(StateManagerObject.GetGameState());
+        //Debug.Log(StateManagerObject.GetGameState());
         
     }
 

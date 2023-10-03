@@ -28,7 +28,7 @@ public class StateManager : MonoBehaviour
 
                 break;
             case GameState.Round_Start:
-
+                Debug.Log("Round_Start");
                 break;
             case GameState.Round_End:
 
@@ -45,7 +45,8 @@ public class StateManager : MonoBehaviour
     }
     void Start()
     {
-        UpdateState(GameState.Setup);
+        //UpdateState(GameState.Setup);
+        //Took this out because start would be called after updating state
     }
 
     // Update is called once per frame

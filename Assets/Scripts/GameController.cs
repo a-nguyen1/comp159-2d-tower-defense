@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int towerPositions = 5;
     [SerializeField] private TextMeshProUGUI bankLabel;
     [SerializeField] private GameObject gameOverText;
+    private StateManager StateManagerObject;
     private GameObject bankObject;
     private GameObject[] BuyButton;
     private GameObject[] MenuLabel;
@@ -22,12 +23,15 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetUpTowerPositions();
-        StartCoroutine("SpawnEnemies");
+        StateManagerObject = GameObject.Find("GameController").GetComponent<StateManager>();
+        StateManagerObject.UpdateState(GameState.Round_Start);
         bankObject = GameObject.FindGameObjectWithTag("Money");
         bankLabel.SetText("Bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
+        SetUpTowerPositions();
+        StartCoroutine("SpawnEnemies");
         BuyButtonSetUp();
         LabelSetUp();
+        
     }
 
     // Update is called once per frame
@@ -50,7 +54,7 @@ public class GameController : MonoBehaviour
     
     private IEnumerator SpawnEnemies() //Coroutine to call enemy spawning function
     {
-        while (true) //Will need to change true to set number in the future
+        while (StateManagerObject.GetGameState() == GameState.Round_Start) //Will need to change true to set number in the future
         {
             SpawnEnemy();
             yield return new WaitForSeconds(waitTime);
