@@ -10,6 +10,7 @@ TagManager:
   - TowerPosition
   - BuyButton
   - UpgradeButton
+  - MenuLabel
   layers:
   - Default
   - TransparentFX

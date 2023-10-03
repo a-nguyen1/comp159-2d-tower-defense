@@ -16,6 +16,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bankLabel;
     private GameObject bankObject;
     private GameObject[] BuyButton;
+    private GameObject[] MenuLabel;
+   
+    
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +30,7 @@ public class GameController : MonoBehaviour
         bankObject = GameObject.FindGameObjectWithTag("Money");
         bankLabel.SetText("Bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
         BuyButtonSetUp();
-
+        LabelSetUp();
     }
 
     // Update is called once per frame
@@ -70,11 +75,28 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < towerPositions; i++)
         {
             float xValue = screenWidth * 0.94f; // 6% from the right
-            float yValue = screenHeight * (0.10f + (i * 0.2f)); // Increment by 20% height
+            float yValue = screenHeight * (0.15f + (i * 0.2f)); // Increment by 20% height
             var position = new Vector3(xValue,yValue, -10);
             BuyButton[i].transform.position = position;
             
 
+        }
+    }
+
+    private void LabelSetUp()
+    {
+        
+        
+        float screenWidth = Screen.width;
+        float screenHeight = Screen.height;
+        MenuLabel = GameObject.FindGameObjectsWithTag("MenuLabel");
+        for (int i = 0; i < 5; i++)
+        {
+            
+            float xValue = screenWidth * 0.95f; // 6% from the right
+            float yValue = screenHeight * (0.80f - (i * 0.2f));// Increment by 20% height
+            var position = new Vector3(xValue,yValue, -15);
+            MenuLabel[i].transform.position = position;
         }
     }
     public void BankChange()
