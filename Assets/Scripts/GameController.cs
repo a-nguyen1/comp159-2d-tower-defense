@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int towerPositions = 5;
     [SerializeField] private TextMeshProUGUI bankLabel;
     [SerializeField] private GameObject gameOverText;
+    [SerializeField] private GameObject mainMenuButton;
     private StateManager StateManagerObject;
     private GameObject bankObject;
     private GameObject[] BuyButton;
@@ -111,6 +112,6 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         gameOverText.SetActive(true);
-        Debug.Log("GameOver Active");
+        mainMenuButton.SetActive(true);
     }
 }
