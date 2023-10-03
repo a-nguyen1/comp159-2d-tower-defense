@@ -7,6 +7,8 @@ public class DomeManager : MonoBehaviour
     // Start is called before the first frame update
     public float domeHP = 100;
     public float domeMaxHP = 100;
+    public int UpgradeLevel = 1;
+    private StateManager StateManagerObject;
     private SpriteRenderer domeSprite;
 
     void Awake(){
@@ -29,6 +31,7 @@ public class DomeManager : MonoBehaviour
     void Start()
     {
         domeSprite = GetComponent<SpriteRenderer>();
+        StateManagerObject = GameObject.Find("GameController").GetComponent<StateManager>();
     }
     // throw a bunch of switch statements in here, this is whe
     private void StateChangeListener(GameState obj){
@@ -57,6 +60,7 @@ public class DomeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(StateManagerObject.GetGameState());
         
     }
 
@@ -77,6 +81,12 @@ public class DomeManager : MonoBehaviour
             StateManager.Instance.UpdateState(GameState.Game_Over);
             domeSprite.color = new Color(255,0,0);
         }
+    }
+
+    public void UpgradeDome(int additional_level){
+            UpgradeLevel+=additional_level;
+            RepairDome();
+
     }
 
 }

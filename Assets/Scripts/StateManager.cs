@@ -53,6 +53,11 @@ public class StateManager : MonoBehaviour
     {
         
     }
+    
+    public GameState GetGameState(){
+        return State;
+    }
+
 }
 
 public enum GameState{
