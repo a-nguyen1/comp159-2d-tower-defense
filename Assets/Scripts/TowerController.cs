@@ -83,9 +83,18 @@ public class TowerController : MonoBehaviour
         return nearestEnemyPosition;
     }
 
-    public void SetTowerType(TowerType newType)
+    public void SetTowerType(String newType)
     {
-        type = newType;
+        if (newType.Contains("Cannon"))
+        {
+            type = TowerType.Basic;
+        } else if (newType.Contains("Ice"))
+        {
+            type = TowerType.Slow;
+        } else if (newType.Contains("Bomb"))
+        {
+            type = TowerType.Bomb;
+        }
     }
 
     public enum TowerType
