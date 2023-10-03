@@ -248,8 +248,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3112825756475273947, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
       propertyPath: m_Name
-      value: BuyTurret
+      value: Cannon
       objectReference: {fileID: 0}
+    - target: {fileID: 3237182491842205538, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4922350193826688816}
     - target: {fileID: 7130913351414562067, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -276,11 +280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7130913351414562067, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 7130913351414562067, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7130913351414562067, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -332,9 +336,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8246997318619717038, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
       propertyPath: m_text
-      value: 'Buy Turret
+      value: 'Buy Cannon
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246997318619717038, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
+      propertyPath: m_fontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246997318619717038, guid: 1aeb24bebf5ed3b43a8765f5f37041f1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

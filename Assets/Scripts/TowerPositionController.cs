@@ -36,17 +36,17 @@ public class TowerPositionController : MonoBehaviour
             // TODO add UI to buy tower
             currentTower = Instantiate(tower, transform.localPosition, Quaternion.identity);
             towerExists = true;
-            if (textLabel.text.Contains("Buy Turret"))
+            if (textLabel.text.Contains("Buy Cannon"))
             {
-                textLabel.SetText("Sell Turret");
+                textLabel.SetText("Sell Cannon");
             }
         }
         else
         {
             // TODO add money when selling tower
-            if (textLabel.text.Contains("Sell Turret"))
+            if (textLabel.text.Contains("Sell Cannon"))
             {
-                textLabel.SetText("Buy Turret");
+                textLabel.SetText("Buy Cannon");
             }
             Destroy(currentTower);
             towerExists = false;
