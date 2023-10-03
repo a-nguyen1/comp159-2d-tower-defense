@@ -27,7 +27,7 @@ public class TowerPositionController : MonoBehaviour
     public void OnMouseDown()
     {
         GameObject child = gameObject.transform.GetChild(0).gameObject; // canvas
-        child = child.transform.GetChild(1).gameObject; // buy button
+        child = child.transform.GetChild(0).gameObject; // buy button
         child = child.transform.GetChild(0).gameObject; // buy button text
         TextMeshProUGUI textLabel = child.GetComponent<TextMeshProUGUI>(); // buy button text label
         if (!towerExists) // TODO check if player has enough currency to buy tower
