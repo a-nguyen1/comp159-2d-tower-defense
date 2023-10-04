@@ -498,11 +498,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2702362309101211713, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_text
-      value: Turret 3
+      value: Turret 2
       objectReference: {fileID: 0}
     - target: {fileID: 7936680534212388754, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Name
-      value: TurretOneLabel (1)
+      value: TurretTwoLabel
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Pivot.x
@@ -534,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -599,11 +599,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2702362309101211713, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_text
-      value: Turret 1
+      value: Turret 5
       objectReference: {fileID: 0}
     - target: {fileID: 7936680534212388754, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Name
-      value: TurretOneLabel (3)
+      value: 'TurretFiveLabel '
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Pivot.x
@@ -635,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -891,7 +891,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2702362309101211713, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_text
-      value: Turret 5
+      value: Turret 1
       objectReference: {fileID: 0}
     - target: {fileID: 7936680534212388754, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Name
@@ -927,7 +927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1078,10 +1078,10 @@ RectTransform:
   m_Children:
   - {fileID: 1059220241}
   - {fileID: 749672786}
-  - {fileID: 1667408845}
   - {fileID: 460089696}
-  - {fileID: 948425395}
+  - {fileID: 1667408845}
   - {fileID: 858752422}
+  - {fileID: 948425395}
   - {fileID: 1942291380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1177,7 +1177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7936680534212388754, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Name
-      value: TurretOneLabel (4)
+      value: 'TurretFourLabel '
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Pivot.x
@@ -1209,7 +1209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1274,11 +1274,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2702362309101211713, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_text
-      value: Turret 2
+      value: Turret 3
       objectReference: {fileID: 0}
     - target: {fileID: 7936680534212388754, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Name
-      value: TurretOneLabel (2)
+      value: 'TurretThreeLabel '
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_Pivot.x
@@ -1310,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135788939732691130, guid: a645e8388300061429153217c84a211a, type: 3}
       propertyPath: m_LocalPosition.x
