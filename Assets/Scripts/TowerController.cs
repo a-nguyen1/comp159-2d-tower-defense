@@ -12,6 +12,9 @@ public class TowerController : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float bulletLifetime;
     [SerializeField] private TowerType type = TowerType.Basic;
+
+    [SerializeField] private int maxHealth = 5;
+    [SerializeField] private int currentHealth;
     
     private Vector2 towerLocation;
     private GameObject nearestEnemy;
@@ -20,6 +23,7 @@ public class TowerController : MonoBehaviour
     {
         towerLocation = tower.transform.position;
         StartCoroutine("SpawnBullets");
+        currentHealth = maxHealth;
     }
 
     void FixedUpdate()
@@ -43,7 +47,15 @@ public class TowerController : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.tag == "Enemy"){
-            // TODO lower tower health here
+            //Remember to have "isTrigger" clicked for blue tower prefab
+            currentHealth -= 1;
+            Destroy(other.gameObject);
+            if (currentHealth <= 0)
+            {
+                Destroy(this.gameObject);
+                Destroy(other.gameObject);
+                OnDestroy();
+            }
         }
     }
 
