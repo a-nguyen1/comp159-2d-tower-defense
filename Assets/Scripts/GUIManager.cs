@@ -27,6 +27,15 @@ public class GUIManager : MonoBehaviour
             }
         }
     }
+
+    public void ToggleShopButtons(bool tof){
+        foreach (GameObject element in GUIElements)
+        {
+            if (element.tag == "ShopButton"){
+                element.SetActive(tof);
+            }
+        }
+    }
  
 
     // Update is called once per frame
