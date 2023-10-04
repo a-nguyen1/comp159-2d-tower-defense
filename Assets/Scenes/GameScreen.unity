@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 254122023}
   - component: {fileID: 254122024}
   - component: {fileID: 254122025}
+  - component: {fileID: 254122026}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -553,6 +554,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveTime: 10
   IntermissionTime: 15
+--- !u!114 &254122026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254122021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9106684057479984faf381603f189ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GUIElements: []
 --- !u!1 &372463282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,7 +2508,7 @@ GameObject:
   - component: {fileID: 1942291381}
   m_Layer: 5
   m_Name: GameOver
-  m_TagString: Untagged
+  m_TagString: EndScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
