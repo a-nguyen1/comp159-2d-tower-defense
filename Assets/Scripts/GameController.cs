@@ -47,6 +47,9 @@ public class GameController : MonoBehaviour
         if(obj == GameState.Round_Start){
             StartCoroutine("SpawnEnemies");
         }
+         if(obj == GameState.Round_End){
+            StopCoroutine("SpawnEnemies");
+        }
 
         
     }

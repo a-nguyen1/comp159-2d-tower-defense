@@ -18,17 +18,20 @@ public class StateManager : MonoBehaviour
     //It would be best to have other scripts listen for these events.
 
     public void UpdateState(GameState state){
+        if (state == State){
+            return;
+        }
         Debug.Log("State changted from " + State.ToString() + " to " + state.ToString());
         State = state;
         switch(state){
             case GameState.Setup:
-                Debug.Log("Setup");
+
                 break;
             case GameState.Intermission:
 
                 break;
             case GameState.Round_Start:
-                Debug.Log("Round_Start");
+
                 break;
             case GameState.Round_End:
 

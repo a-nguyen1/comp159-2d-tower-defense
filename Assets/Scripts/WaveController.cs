@@ -38,7 +38,7 @@ public class WaveController : MonoBehaviour
                 StartCoroutine("WaveTimer");
                 break;
             case GameState.Round_End:
-                StateManager.Instance.UpdateState(GameState.Intermission);
+                StartCoroutine("RoundEndTimer");
                 break;
             case GameState.Game_Over:
                
@@ -58,6 +58,11 @@ public class WaveController : MonoBehaviour
     private IEnumerator IntermissionTimer(){
         yield return new WaitForSeconds(IntermissionTime);
         StateManager.Instance.UpdateState(GameState.Round_Start);
+    }
+
+    private IEnumerator RoundEndTimer(){
+        yield return new WaitForSeconds(5);
+        StateManager.Instance.UpdateState(GameState.Intermission);
     }
 
 
