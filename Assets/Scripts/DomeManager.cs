@@ -11,6 +11,7 @@ public class DomeManager : MonoBehaviour
     private StateManager StateManagerObject;
     private SpriteRenderer domeSprite;
     private GameObject game;
+    private GUIManager GUI_Manager;
 
     void Awake(){
         StateManager.OnGameStateChanged += StateChangeListener;
@@ -34,6 +35,7 @@ public class DomeManager : MonoBehaviour
         domeSprite = GetComponent<SpriteRenderer>();
         game = GameObject.FindGameObjectWithTag("GameController");
         StateManagerObject = GameObject.Find("GameController").GetComponent<StateManager>();
+        GUI_Manager = game.GetComponent<GUIManager>();
     }
     // throw a bunch of switch statements in here, this is whe
     private void StateChangeListener(GameState obj){
@@ -51,7 +53,8 @@ public class DomeManager : MonoBehaviour
 
                 break;
             case GameState.Game_Over:
-
+                game.GetComponent<GameController>().GameOver();
+                GUI_Manager.ToggleGameEndScreen(true);
                 break;
             default:
                 Debug.LogError("Invalid state change");
@@ -82,7 +85,6 @@ public class DomeManager : MonoBehaviour
         if(domeHP <= 0 && StateManager.Instance.State != GameState.Game_Over){
             StateManager.Instance.UpdateState(GameState.Game_Over);
             domeSprite.color = new Color(255,0,0);
-            game.GetComponent<GameController>().GameOver();
         }
     }
 

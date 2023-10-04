@@ -111,7 +111,7 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.SetActive(true);
-        mainMenuButton.SetActive(true);
+        //gameOverText.SetActive(true);
+        //mainMenuButton.SetActive(true);
     }
 }
