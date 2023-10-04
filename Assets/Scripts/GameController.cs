@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
             
             float xValue = screenWidth * 0.95f; // 6% from the right
             float yValue = screenHeight * (0.80f - (i * 0.2f));// Increment by 20% height
-            var position = new Vector3(xValue,yValue, -15);
+            var position = new Vector3(xValue,yValue, 0);
             MenuLabel[i].transform.position = position;
         }
     }
