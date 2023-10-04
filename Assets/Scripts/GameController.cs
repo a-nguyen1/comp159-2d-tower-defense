@@ -29,11 +29,29 @@ public class GameController : MonoBehaviour
         bankObject = GameObject.FindGameObjectWithTag("Money");
         bankLabel.SetText("Bank:  " + bankObject.GetComponent<IncomeController>().BankTotalReturn());
         SetUpTowerPositions();
-        StartCoroutine("SpawnEnemies");
+        //StartCoroutine("SpawnEnemies");
         BuyButtonSetUp();
         LabelSetUp();
         
     }
+
+    void Awake(){
+        StateManager.OnGameStateChanged += RoundStartListener;
+    }
+
+    void OnDestroy(){
+        StateManager.OnGameStateChanged -= RoundStartListener;
+    }
+
+    private void RoundStartListener(GameState obj){
+        if(obj == GameState.Round_Start){
+            StartCoroutine("SpawnEnemies");
+        }
+
+        
+    }
+
+
 
     // Update is called once per frame
     void Update()
