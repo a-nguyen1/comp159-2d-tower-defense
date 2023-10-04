@@ -25,6 +25,16 @@ public class IncomeController : MonoBehaviour
     {
         return bankTotal;
     }
+
+    public void BoughtTower()
+    {
+        bankTotal -= 50;
+    }
+
+    public void SoldTower()
+    {
+        bankTotal += 25;
+    }
     
     void Start()
     {

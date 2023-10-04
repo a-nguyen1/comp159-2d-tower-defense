@@ -12,12 +12,15 @@ public class TowerPositionController : MonoBehaviour
     private bool towerExists;
     private GameObject currentTower;
     private String towerType;
+    private GameObject bankObject;
+    private GameObject game;
 
     // Start is called before the first frame update
     void Start()
     {
         towerExists = false;
-       
+        bankObject = GameObject.FindGameObjectWithTag("Money");
+        game = GameObject.FindGameObjectWithTag("GameController");
     }
 
     // Update is called once per frame
@@ -38,6 +41,8 @@ public class TowerPositionController : MonoBehaviour
             tower.gameObject.GetComponent<TowerController>().SetTowerType(towerType);
             currentTower = Instantiate(tower, transform.localPosition, Quaternion.identity);
             towerExists = true;
+            bankObject.GetComponent<IncomeController>().BoughtTower();
+            game.GetComponent<GameController>().BankChange();
             if (textLabel.text.Contains("Buy"))
             {
                 textLabel.SetText("Sell Tower");
@@ -46,6 +51,8 @@ public class TowerPositionController : MonoBehaviour
         else
         {
             // TODO add money when selling tower
+            bankObject.GetComponent<IncomeController>().SoldTower();
+            game.GetComponent<GameController>().BankChange();
             if (textLabel.text.Contains("Sell"))
             {
                 textLabel.SetText("Buy Tower");
