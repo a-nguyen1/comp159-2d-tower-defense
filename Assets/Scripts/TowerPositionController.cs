@@ -33,7 +33,7 @@ public class TowerPositionController : MonoBehaviour
         child = child.transform.GetChild(0).gameObject; // buy button
         child = child.transform.GetChild(0).gameObject; // buy button text
         TextMeshProUGUI textLabel = child.GetComponent<TextMeshProUGUI>(); // buy button text label
-        if (!towerExists) // TODO check if player has enough currency to buy tower
+        if (bankObject.GetComponent<IncomeController>().BankTotalReturn() >= 50 && !towerExists)
         {
             // look at value of dropdown menu to set tower type
             TMP_Dropdown dropdownMenu = FindObjectOfType<TMP_Dropdown>();
@@ -48,9 +48,8 @@ public class TowerPositionController : MonoBehaviour
                 textLabel.SetText("Sell Tower");
             }
         }
-        else
+        else if (towerExists)
         {
-            // TODO add money when selling tower
             bankObject.GetComponent<IncomeController>().SoldTower();
             game.GetComponent<GameController>().BankChange();
             if (textLabel.text.Contains("Sell"))
