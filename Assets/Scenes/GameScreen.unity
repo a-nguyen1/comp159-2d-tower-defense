@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8fe1b10afdc45942829da119641fa45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  domeHP: 100
+  domeHP: 50
   domeMaxHP: 100
   UpgradeLevel: 1
 --- !u!1 &104253290
@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 254122023}
   - component: {fileID: 254122024}
   - component: {fileID: 254122025}
+  - component: {fileID: 254122026}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -477,6 +478,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GUIElements: []
+--- !u!114 &254122026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254122021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e47081a8e25724e84141e3b8e81ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveTime: 10
+  IntermissionTime: 15
 --- !u!1 &358102124
 GameObject:
   m_ObjectHideFlags: 0
